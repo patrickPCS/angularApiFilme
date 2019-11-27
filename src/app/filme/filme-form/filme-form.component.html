@@ -1,0 +1,23 @@
+<form [formGroup]="formulariaNovo" (ngSubmit)="onSubmit(formulariaNovo)">
+    <div class="form-group">
+        <label>Nome</label>
+        <input type="text" formControlName="nome" placeholder="Enter com o Nome">
+    </div>
+    <div class="form-group">
+        <label>Ano</label>
+        <input type="number" formControlName="ano" placeholder="Digite o ano de lançamento do Filme">
+    </div>
+    <div class="form-group">
+        <label>Duração</label>
+        <input type="number" formControlName="duracao" placeholder="Digite o ano de duração em minutos do Filem">
+    </div>
+    <div >
+        <label>
+            Produtora
+        </label>
+        <select formControlName="produtoraId" >
+            <option *ngFor="let produtora of produtoras" [value]= produtora.id >{{produtora.nome}}</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

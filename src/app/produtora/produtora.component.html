@@ -1,0 +1,22 @@
+<p>produtora works!</p>
+<form  [formGroup]="formularioProdutora" (ngSubmit)="onSubmit(formularioProdutora)">
+
+        <div [ngClass]="aplicaCssError('nome')">
+        <div>
+            <label for="nome">Nome:</label>
+        </div>
+        <div>
+            <input type="text" formControlName="nome" placeholder="Nome">
+        </div>
+
+        <div>
+            <label for="dataCriacao">Data de Criação:</label>
+        </div>
+    </div>
+
+    <div>
+        <input type="text" formControlName="dataCriacao" placeholder="DD/MM/AA">
+    </div>
+
+    <button type="submit">Submit</button>
+</form>

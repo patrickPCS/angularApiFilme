@@ -1,0 +1,11 @@
+<form [formGroup]="formulariaNovo" (ngSubmit)="onSubmit(formulariaNovo)">
+        <div class="form-group">
+            <label>Nome</label>
+            <input type="text" formControlName="nome" placeholder="Enter com o Nome">
+        </div>
+        <div class="form-group">
+            <label>Data de Criação</label>
+            <input type="string" formControlName="dataCriacao" placeholder="Digite o ano de lançamento do Filme">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>

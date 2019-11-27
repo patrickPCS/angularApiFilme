@@ -1,0 +1,27 @@
+<form [formGroup]="formularioFilme" (ngSubmit)="onSubmit(formularioFilme)">
+    <div > 
+            <div >
+                <label for="nome" >Nome:</label>
+            </div>
+            <div >
+                <input type="text" formControlName="nome"
+                placeholder="Nome">
+            </div>
+        </div>    
+        <div >
+            <label for="dataCriacao" >Duração:</label>
+        </div>
+           
+        <div >
+            <input type="text"  formControlName="duracao"
+            placeholder="DD/MM/AA">
+        </div>
+        <div >
+            <label for="dataCriacao" >Ano:</label>
+        </div>
+           
+        <div >
+            <input type="text"  formControlName="ano"
+            placeholder="DD/MM/AA">
+        </div>
+</form>

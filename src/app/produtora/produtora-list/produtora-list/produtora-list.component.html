@@ -1,0 +1,45 @@
+<div class="card mt-3">
+        <div class="card-header">
+          <div class="float-left">
+            <h4>Filmes</h4>
+          </div>
+          <div class="float-right">
+              <button  class="btn btn-outline-primary" [routerLink]="['/produtora/novo']" 
+              routerLinkActive="router-link-active" >Nova Produtora</button>
+          </div>
+        </div>
+        <div class="card-body">
+          <table class="table table-hover" *ngIf="(produtora$ | async) as produtoras; else loading">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>NOME</th>
+                <th>DATA DA CRIAÇÃO</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let produtora of produtoras">
+                <td>{{ produtora.id }}</td>
+                <td>{{ produtora.nome }}</td>
+                <td>{{ produtora.dataCriacao }}</td>
+                <td>
+                  <span class="float-right">
+                    <button class="btn btn-outline-warning mb-1 btn-sm" (click)="onEdit(produtora.id)">
+                      Atualizar
+                    </button>
+      
+                    <button class="btn btn-outline-danger mb-1 btn-sm" (click)="onDelete(produtora)"> 
+                      Remover
+                    </button>
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+      
+          <ng-template #loading>
+            <span>Carregando produtora...</span>
+          </ng-template>
+        </div>
+      </div>  
